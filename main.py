@@ -209,14 +209,6 @@ api_key = ["b9b38e428d49"]
 callbackOriTiktok =[]
 callbackVidTiktok =[]
 @bot.message_handler(regexp='https://vt.tiktok.com/')
-
-
-
-
-
-
-@bot.message_handler(regexp='https://www.instagram.com/') # IG image/REELS/TV
-def downloadvidinstagram(message):
 def downloadvidtiktok(message):
     # dapatkan data dari api hingga berhasil
     try:
@@ -269,6 +261,11 @@ def downloadvidtiktok(message):
 
             log(message, f"TIKTOK VID ZENZ- {message.text}")
             unduhMusik(urlAudio, f"{file}.mp3")
+
+
+@bot.message_handler(regexp='https://www.instagram.com/') # IG image/REELS/TV
+def downloadvidinstagram(message):
+
  # scrape konten
 
     url = f"https://www.instagram.com/p/{message.text.split('/')[-2]}/?__a=1"
