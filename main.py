@@ -11,7 +11,7 @@ import random
 import os
 from instascrape import *
 
-bot = telebot.TeleBot("1718369489:AAFurcwtMU-qped3oXaYMO1el0jCp5J6Qh8")
+bot = telebot.TeleBot("5049086779:AAGUeZhsHHBT7x250K0Wc1zGzYXjrrDbjv8")
 
 def log(message, perintah):
     global jam, menit
