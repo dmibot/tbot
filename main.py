@@ -77,18 +77,21 @@ def panggilStatus(menu):
     return status
 
 # Kirim pesan keseluruh pengguna
-idPengguna = [1214473324,1318920284,1362906837,1090735758,1743797778,261671993,1965688888,866672023,1287257408,1016186562,1353477204,1055650611,2086602433
-,1373534243,922121235,879463999,1797875525,1357555222,261671993,1259366236,1264335154,1298532885]
+idPengguna = ['1214473324', '1235828634', '1318920284', '1362906837', '1090735758', '1743797778', '261671993', '1965688888', '866672023', '1287257408', '1016186562', '1353477204', '1055650611', '2086602433', '1373534243', '922121235', '879463999', '1797875525', '1357555222', '1259366236', '1264335154', '1298532885', '5021016236', '1374964362', '5059892861', '1377131418', '5099128814', '5054461679', '2086547882', '852467060', '1666222581', '2052130877', '1298723696', '5080160424', '1158356287', '1446252254', '1373952237', '1414972369', '1158847026', '1768355373', '1105416796', '1189799968', '2128536417', '1573103212', '2138827758', '891498521', '1919922736', '5289330142', '1810014986', '1773122100', '1871920175', '5037141584', '1394568739', '905180125', '5250836836', '2096415607', '1640238613', '1929679916', '5211524564', '1060660338', '1160665729', '1359609332', '1833571121', '2088559067', 952773380]
+
 @bot.message_handler(commands=['kirimGambar'])
 def sendImage(message):
     unduhVideo(message.text[13:], 'gambar.jpg')
     for i in idPengguna:
         bot.send_photo(i, open('gambar.jpg', 'rb'))
  
+pesan = 0
 @bot.message_handler(commands=['kirimPesan'])
 def sendImage(message):
     for i in idPengguna:
         bot.send_message(i, message.text[12:])
+        pesan += 1
+        print(pesan)
 
 @bot.message_handler(commands=['start'])
 def downloadvidtiktok(message):
@@ -109,13 +112,16 @@ note : 'tidak perlu menggunakan @, dan username harus detail'
 3️⃣ Twitter
 1. download video twitter = paste url di chat
 
-4️⃣ Youtube
+4️⃣ Facebook 
+1. download video Facebook = paste url di chat
+
+5️⃣ Youtube
 1. download musik youtube = paste url di chat
 
-5️⃣ SoundCloud
+6️⃣ SoundCloud
 1. download musik soundCloud = paste url di chat 
 
-6️⃣ Joox
+7️⃣ Joox
 1. download musik joox = /joox_judulLagu
 ex : /joox Alan Walker - Different World
 note : 'judul lagunya harus detail'
@@ -139,7 +145,8 @@ def downloadvidtiktok(message):
                 panggilStatus('Twitter'),
                 panggilStatus('Youtube'),
                 panggilStatus('SoundCloud'),
-                panggilStatus('Joox')]#7
+                panggilStatus('Joox')],#7
+                panggilStatus('Facebook')],
     bot.send_message(message.chat.id, 
     f'''Halo {message.from_user.first_name}👋
 berikut command yang tersedia :
@@ -157,13 +164,16 @@ note : 'tidak perlu menggunakan @, dan username harus detail'
 3️⃣ Twitter
 1. video Twitter{dataStatus[4]} = paste url di chat
 
-4️⃣ Youtube
+4️⃣ Facebook
+1. download video Facebook{dataStatus[8]} = paste url di chat
+
+5️⃣ Youtube
 1. audio Youtube{dataStatus[5]} = paste url di chat
 
-5️⃣ SoundCloud
+6️⃣ SoundCloud
 1. musik SoundCloud{dataStatus[6]} = paste url di chat 
 
-6️⃣ Joox
+7️⃣ Joox
 1. musik Joox{dataStatus[7]} = /joox judulLagu
 ex : /joox Alan Walker - Different World
 note : 'judul lagunya harus detail'
