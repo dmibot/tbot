@@ -534,6 +534,28 @@ def downloadvidtiktok(message):
          bot.send_message(message.chat.id, f"tidak dapat mengunduh video :(")
          updateStatus('Twitter', '❎')
 
+"""                                 FACEBOOK DONWLOADER             """
+@bot.message_handler(regexp='https://fb.gg/')
+def downloadvidfacebook(message):
+    try:
+        bot.send_chat_action(message.chat.id, "upload_video")
+        print(message.text)
+        url = requests.get(
+            f"https://zenzapi.xyz/downloader/facebook?url={message.text}&apikey=b9b38e428d49")
+        data = url.json()
+
+        video = data['result']['medias'][0]['url']
+        urllib.request.urlretrieve(
+            video, f"{message.from_user.first_name}_facebook.mp4")
+
+        bot.send_video(message.chat.id, open(
+            f"{message.from_user.first_name}_facebook.mp4", 'rb'))
+        log(message, f"Facebook  ")
+        updateStatus('Facebook', '✅')
+    except:
+        bot.send_message(message.chat.id, f"tidak dapat mengunduh video :(")
+        updateStatus('Facebook', '❎')
+        
 bot.send_message(1214473324, "bot starting!")
 print("bot  running...!! ")
 bot.polling()  
