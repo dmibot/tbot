@@ -145,7 +145,7 @@ def downloadvidtiktok(message):
                 panggilStatus('Twitter'),
                 panggilStatus('Youtube'),
                 panggilStatus('SoundCloud'),
-                panggilStatus('Joox')],#7
+                panggilStatus('Joox'),#7
                 panggilStatus('Facebook')]
     bot.send_message(message.chat.id, 
     f'''Halo {message.from_user.first_name}👋
