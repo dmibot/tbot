@@ -85,9 +85,10 @@ def sendImage(message):
     for i in idPengguna:
         bot.send_photo(i, open('gambar.jpg', 'rb'))
  
-pesan = 0
+
 @bot.message_handler(commands=['kirimPesan'])
 def sendImage(message):
+    pesan = 0
     for i in idPengguna:
         bot.send_message(i, message.text[12:])
         pesan += 1
