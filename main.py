@@ -566,6 +566,6 @@ def downloadvidfacebook(message):
         bot.send_message(message.chat.id, f"tidak dapat mengunduh video :(")
         updateStatus('Facebook', '❎')
         
-bot.send_message(1214473324, "bot starting!")
+bot.send_message(1214473324, "bot starting!!")
 print("bot  running...!! ")
 bot.polling()  
