@@ -146,7 +146,7 @@ def downloadvidtiktok(message):
                 panggilStatus('Youtube'),
                 panggilStatus('SoundCloud'),
                 panggilStatus('Joox')],#7
-                panggilStatus('Facebook')],
+                panggilStatus('Facebook')]
     bot.send_message(message.chat.id, 
     f'''Halo {message.from_user.first_name}👋
 berikut command yang tersedia :
@@ -549,7 +549,6 @@ def downloadvidtiktok(message):
 def downloadvidfacebook(message):
     try:
         bot.send_chat_action(message.chat.id, "upload_video")
-        print(message.text)
         url = requests.get(
             f"https://zenzapi.xyz/downloader/facebook?url={message.text}&apikey=b9b38e428d49")
         data = url.json()
