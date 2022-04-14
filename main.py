@@ -535,7 +535,7 @@ def downloadvidtiktok(message):
          updateStatus('Twitter', '❎')
 
 """                                 FACEBOOK DONWLOADER             """
-@bot.message_handler(regexp='https://fb.gg/')
+@bot.message_handler(regexp='https://fb.')
 def downloadvidfacebook(message):
     try:
         bot.send_chat_action(message.chat.id, "upload_video")
@@ -545,8 +545,8 @@ def downloadvidfacebook(message):
         data = url.json()
 
         video = data['result']['medias'][0]['url']
-        urllib.request.urlretrieve(
-            video, f"{message.from_user.first_name}_facebook.mp4")
+        
+        unduhVideo(video, f"{message.from_user.first_name}_facebook.mp4")
 
         bot.send_video(message.chat.id, open(
             f"{message.from_user.first_name}_facebook.mp4", 'rb'))
