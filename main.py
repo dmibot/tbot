@@ -274,7 +274,7 @@ def downloadvidtiktok(message):
             unduhMusik(urlAudio, f"{file}.mp3")
 
 
-@bot.message_handler(regexp='https://www.instagram.com/') # IG image/REELS/TV
+@bot.message_handler(regexp='https://www.instagram.com/') # IG image/REELS/TV s
 def downloadvidinstagram(message):
 
  # scrape konten
