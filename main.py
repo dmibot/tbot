@@ -215,7 +215,7 @@ def callbacks(call):
             log(call.message, f"TIKTOK AUDIO CONVERT")
 
 # key ZENZAPI
-api_key = ["b9b38e428d49"] 
+api_key = ["OHOK989412345"] 
 """                                          TIKTOK DOWNLOADER                                                                  """
 callbackOriTiktok =[]
 callbackVidTiktok =[]
