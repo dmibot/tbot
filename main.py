@@ -25,7 +25,7 @@ def log(message, perintah):
     #TAMBAHKAN TEXT KE FILE .txt
     text = f"{waktu} > {nama} {nama_akhir} < {perintah} "
     print(text)
-    bot.send_message(-524462976, text)
+    bot.send_message(-628986892, text)
 
 def getData(link):          # dapatkan data dari api 
     url = requests.get(link)
